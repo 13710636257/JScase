@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box input{
+				float: left;
+				width: 45px;
+				line-height: 35px;
+				text-align: center;
+			}
+			#box div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+				display: none;
+			}
+			.active {
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" name="" id="" value="2016" class="active"/>
+			<input type="button" name="" id="" value="2017" />
+			<input type="button" name="" id="" value="2018" />
+			<div style="display: block;">1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById('box');
+			var iptBtn=box.getElementsByTagName('input');
+			var content=box.getElementsByTagName('div');
+			
+			for(var i=0;i<iptBtn.length;i++){
+				iptBtn[i].index=i;
+				iptBtn[i].onclick=function() {
+					for(var i=0;i<iptBtn.length;i++){
+						iptBtn[i].className='';
+						content[i].style.display='none';
+						
+					}
+						
+					this.className='active';
+					content[this.index].style.display='block'
+				}
+			}
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			回到顶部
+				window.onscroll = function () {
+		            var current = $(window).scrollTop();
+		            if (current > 280){
+		                $(".back-top").removeClass("hide"); 
+		            }else {
+		                $(".back-top").addClass("hide");
+		            }
+		        };
+			        function ReturnTop() {
+			            $(window).scrollTop(0);
+			        }
+			        
+			        $(".back-top").click(function(){
+			        	ReturnTop();
+			        })
+			        
+			        
+			        
+		</script>
+	</body>
+</html>

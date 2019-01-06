@@ -1,0 +1,177 @@
+<style>
+	@-webkit-keyframes pan-ripple {
+		0% {
+			-webkit-transform: scale(1);
+			opacity: 0;
+		}
+		30% {
+			-webkit-transform: scale(1.1);
+			opacity: 1;
+		}
+		100% {
+			-webkit-transform: scale(1.4);
+			opacity: 0;
+		}
+	}
+	
+	.wrap-ripple {
+		z-index: 99999;
+		position: fixed;
+		width: 50px;
+		height: 50px;
+		padding: 8px;
+	}
+	
+	.wrap-ripple .hm-ripple i {
+		position: absolute;
+		width: 45px;
+		height: 45px;
+		line-height: normal;
+		border-radius: 50%;
+		border: 1px solid #0a72d2;
+		box-sizing: border-box;
+	}
+	
+	.wrap-ripple .ripple {
+		background: #0a72d2;
+		color: #fff;
+		font-size: 13px;
+		text-align: center;
+		font-style: normal;
+		padding-top: 8%;
+		opacity: .8;
+	}
+	
+	.wrap-ripple .ripple-a {
+		opacity: 0;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-animation: pan-ripple 2s linear infinite;
+		animation: pan-ripple 2s linear infinite;
+	}
+	
+	.wrap-ripple .ripple-b {
+		opacity: 0;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-animation: pan-ripple 1s linear infinite;
+		animation: pan-ripple 1s linear infinite;
+	}
+	
+	.wrap-ripple .hm-ripple {
+		z-index: 99999;
+		position: fixed;
+		width: 50px;
+		height: 50px;
+		display: block;
+		transform-origin: 0px 0px 0px;
+		transform: scale(1, 1);
+		top: 40%;
+		right: 10px;
+	}
+	
+	.wrap-ripple .hm-ripple span.num1 {
+		display: block;
+		height: 15px;
+		width: 15px;
+		border-radius: 15px;
+		position: absolute;
+		top: 0;
+		right: -5px;
+		background: #FF0000;
+		z-index: 100;
+		color: #FFFFFF;
+		text-align: center;
+		line-height: 17px;
+		font-size: 12px;
+		border: 1px solid #fff;
+	}
+	
+	.wrap-ripple .tada {
+		-webkit-animation-name: tada;
+		animation-name: tada;
+	}
+	
+	.wrap-ripple .animated {
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+	
+	@-webkit-keyframes tada {
+		0% {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1)
+		}
+		10%,
+		20% {
+			-webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+		}
+		30%,
+		50%,
+		70%,
+		90% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+		}
+		40%,
+		60%,
+		80% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+		}
+		100% {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1)
+		}
+	}
+	
+	@keyframes tada {
+		0% {
+			-webkit-transform: scale3d(1, 1, 1);
+			-ms-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1)
+		}
+		10%,
+		20% {
+			-webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+			-ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+		}
+		30%,
+		50%,
+		70%,
+		90% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+			-ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+		}
+		40%,
+		60%,
+		80% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+			-ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+		}
+		100% {
+			-webkit-transform: scale3d(1, 1, 1);
+			-ms-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1)
+		}
+	}
+	
+	.tada {
+		-webkit-animation-name: tada;
+		animation-name: tada;
+	}
+</style>
+<div class="wrap-ripple">
+	<a href="javascript:void(0);" onClick="openZoosUrl();return false;" class="hm-ripple" id="hm-ripple">
+		<i class="ripple-a"></i>
+		<i class="ripple">点击<br>咨询</i>
+		<i class="ripple-b"></i>
+		<span id="izxnum" class="num1 wow tada animated" data-wow-duration="2s" data-wow-iteration="infinite" style="visibility:visible;animation-duration:2s;animation-iteration-count:infinite;">8</span>
+	</a>
+</div>

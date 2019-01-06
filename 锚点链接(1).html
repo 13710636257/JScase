@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 500px;
+				height: 500px;
+				text-align: center;
+				line-height: 500px;
+			}
+			#box1{
+				background: aqua;
+			}
+			#box2{
+				background: darksalmon;
+			}
+			#box3{
+				background: lightblue;
+			}
+			#box4{
+				background: seagreen;
+			}
+			#box5{
+				background: mediumslateblue;
+			}
+			a{
+				background: salmon;
+				width: 100px;
+				height: 30px;
+				padding-top: 50px;
+				margin-left: 100px;
+			}
+			
+		</style>
+	</head>
+	<!--
+		锚点链接：点击超链接，跳转到同一个页面的指定位置
+		只能使用id名，超链接中的href的值为#id名
+	-->
+	<body>
+		<div style="position: fixed;top: 0;left: 0">
+			<a href="#box1">跳转box1</a>
+			<a href="#box2">跳转box2</a>
+			<a href="#box3">跳转box3</a>
+			<a href="#box4">跳转box4</a>
+			<a href="#box5">跳转box5</a>
+		</div>
+
+		<div class="box" id="box1" style="margin-top: 300px">这是box1</div>
+		<div class="box" id="box2">这是box2</div>
+		<div class="box" id="box3">这是box3</div>
+		<div class="box" id="box4">这是box4</div>
+		<div class="box" id="box5">这是box5</div>
+		<script>
+            var boxs = document.getElementsByClassName('box');
+            var as = document.getElementsByTagName('a');
+			window.onscroll = function () {
+				for (var i=0;i<boxs.length;i++) {
+				    if((boxs[i].offsetTop-document.documentElement.scrollTop)<0) {
+						for (var j=0;j<as.length;j++) {
+						    as[j].style.backgroundColor = 'salmon';
+						}
+				        as[i].style.backgroundColor = 'aqua'
+					}else {
+                        as[i].style.backgroundColor = 'salmon'
+					}
+				}
+            }
+		</script>
+	</body>
+</html>

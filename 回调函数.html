@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			js中函数可以作为一个参数进行传递
+//			function say (value){
+//				alert(value);
+//			}
+//			
+//			function execute (someFunction, value) {
+//			    someFunction(value);
+//			}
+//			execute(say, 'hi js.');
+			
+//			与
+			function execute (someFunction, value) {
+			    someFunction(value);
+			}
+			execute(function(value){alert(value);}, 'hi js.');
+				
+//			上面第一段代码是将say方法作为参数传递给execute方法 
+//			第二段代码则是直接将匿名函数作为参数传递给execute方法	
+			
+//			这里的say或者匿名函数就被称为回调函数。
+		</script>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript" charset="utf-8">
+
+		function quickSort(arr,L,R){
+			if(L<R){
+				//先分区
+				let particion = partition(arr,L,R);
+
+				//对左 右两边再继续快排
+				quickSort(arr, L, particion[0]-1 );
+				quickSort(arr, particion[1]+1,R);
+			}
+		}
+
+		function partition(arr,L,R){
+			var random = getRandom(L,R);
+			swap(arr, random, R);
+
+			let B = arr[R]; //基准值
+
+			let i= L-1; 
+			let j=R+1;
+			let cur = L;
+
+			while(cur<j){
+				if( arr[cur]>B ){  //大于基准值,则扔给右边
+					swap(arr, cur, j-1);
+					j--;
+				}else if( arr[cur]<B ){  //小于基准值,则扔给左边
+					swap(arr, cur , i+1);
+					cur++;i++;
+				}else{ //相等 
+					cur++;
+				}
+			};
+			return [i+1, j-1];
+		}
+
+
+
+ 		//生成[i,j]随机数
+		function getRandom(i,j){
+			return Math.floor( i + (j-i+1)*Math.random() );
+		}
+
+		function swap(arr,i,j){
+			var temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		};
+
+		function createArr(len,v){
+			let l = getRandom(1,len);
+			
+			let arr=[];
+			for(let i=0; i<l; i++){
+				arr[i] =  getRandom(-v,v);
+			}
+			return arr;
+		}
+
+		function copyArr(arr){
+			let [...res]=arr;
+		    return res;
+		}
+		// 原始排序
+		function sort(arr){
+			arr.sort();
+		}
+
+		function isE(arr1,arr2){
+			if(arr1.length!=arr2.length){
+				return false;
+			}
+
+			for(let i=0; i<arr1.length-1; i++){
+				if(!arr1[i] == arr2[i]){
+					return false;
+				};
+			}
+			return true;
+		}
+
+
+		function test(times,len,v){
+			let flag = true;
+			for(let i=0; i<times; i++){
+				let arr = createArr(len,v);
+				let copy =copyArr(arr);
+				quickSort(arr, 0, arr.length-1);
+				copy.sort();
+
+				if(!isE(arr,copy)){
+					console.log(arr);
+					console.log(copy);
+					flag = false;
+				}
+			}
+			console.log(flag);
+		}
+
+		// let arr = createArr(20,10);
+		// console.log(arr);
+		// quickSort(arr, 0, arr.length-1);
+		// console.log(arr);
+		test(10000,1000,100);
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

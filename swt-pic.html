@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>吸脂</title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div class="box">
+			<img src="" />
+		</div>
+	
+		<script type="text/javascript">
+			var titleHtml=document.title;
+			var img_url="http://static.gmzx.com/images/phone/swt/xinswt/";
+			
+			var gmzxIndex="http://www.gmzx.com/";
+			var baiduIndex="http://baidu.gmzx.com/";
+			
+			var items=["吸脂","隆鼻","脱毛","玻尿酸","瘦脸针",'祛斑','祛痘','双眼皮','嫩肤','水光针','除皱'] //创建一个数组
+			var itemAds={
+							"吸脂":"xz.jpg",	
+							"隆鼻":"longbi.jpg",
+							"玻尿酸":"boNiaoShuan.jpg",
+							"脱毛":'tm.jpg',
+							"瘦脸针":'shoulianzhen.jpg',
+							"祛斑":"quban-qudou.jpg",
+							"祛痘":"quban-qudou.jpg",
+							"双眼皮":"shuangYanPi.jpg",
+							"嫩肤":"nenfu.jpg",
+							"水光针":"shuiguangzhen.jpg",
+							"除皱":"chuZhou",
+							"祛眼袋":"quyandai.jpg"	
+					}	
+			console.log(titleHtml)
+			
+			var swtPic="http://static.gmzx.com/images/phone/swt/520phone-swt.png";
+			
+			function getSwtPic(titleHtml){
+				if(window.location.href==gmzxIndex||window.location.href==baiduIndex){ //首页直接返回默认
+					return swtPic;
+				}else{
+					
+					for(var i=0;i<items.length;i++){
+						if(titleHtml.indexOf(items[i]) != -1){
+							swtPic=itemAds[items[i]];
+							break;
+						}
+					}
+					return swtPic
+				}	
+			}
+		
+			var images=$('.box img');
+				images.attr("src",img_url+ getSwtPic(titleHtml));
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		  #box{width:800px;}
+	 	  #box p{text-indent:2em;}
+	 	  .app {
+	 	  	width: 800px;
+	 	  	height: 400px;
+	 	  	background: pink;
+	 	  }
+	 		
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		    <p>从基层上看去，中国社会是乡土性的。我说中国社会的基层是乡土性的，那是因为我考虑到从这基层上曾长出一层比较上和乡土基层不完全相同的社会，而且在近百年来更在东西方接触边缘上发生了一种很特殊的社会。这些社会的特性我们暂时不提，将来再说。我们不妨先集中注意那些被称为土头土脑的乡下人。他们才是中国社会的基层。</p>
+		    <p>我们说乡下人土气，虽则似乎带着几分藐视的意味，但这个土字却用得很好。土字的基本意义是指泥土。乡下人离不了泥土，因为在乡下住，种地是最普通的谋生办法。在我们这片远东大陆上，可能在很古的时候住过些还不知道种地的原始人，那些人的生活怎样，对于我们至多只有一些好奇的兴趣罢了。以现在的情形来说，这片大陆上最大多数的人是拖泥带水下田讨生活的了。我们不妨缩小一些范围来看，三条大河的流域已经全是农业区。</p>
+		</div>
+		  <a href="#"></a>
+		  <div class="app"></div>
+		<script type="text/javascript" >
+			var str=$('#box').html();
+			function open(){
+				 $('#box').html(str.substring(0, 145)+'...');
+				 $('a').html('展开');
+			}
+	
+			open()
+			 
+			var key=true;
+			$('a').click(function(e) {
+			    if(key==true){
+			    	 $('#box').html(str);
+			         $('a').html('收起');
+			         key=false;
+			    }
+			    else{
+			        open();
+			        key=true;
+			    }
+			})
+		</script>
+		
+	</body>
+</html>

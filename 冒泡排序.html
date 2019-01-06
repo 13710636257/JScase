@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排序</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		// 冒泡排序
+		var arr = [2,1,4,5,3,8,7,11];
+		var temp = null;
+		for(var i=0;i<arr.length-1;i++){
+			for(var j=0;j<arr.length-1-i;j++){
+				if(arr[j]>arr[j+1]){
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp
+				}
+			}
+		}
+		console.log(arr)
+
+		// 选择排序
+		// 生成i，j的随机数
+		function getRandom(i,j){
+			return Math.floor( i + (j-i+1)*Math.random() );//向下取整取随机数
+		}
+		console.log(getRandom(0.8,5))
+	</script>
+</body>
+</html>
+
+
+

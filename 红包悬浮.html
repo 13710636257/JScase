@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link  rel="stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" >
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.acitvityFixed {
+				width: 200px;
+			    height: 200px;
+			    position: fixed;
+			    bottom: 440px;
+			   	right: 40px; z-index: 10;
+			    /*animation: myActivity 2s infinite;*/
+			    animation-name: pulse;
+			    animation-duration: 2s;
+			    animation-timing-function: initial;
+			    animation-delay: initial;
+			    animation-iteration-count: infinite;
+			    animation-direction: initial;
+			    animation-fill-mode: initial;
+			    animation-play-state: initial;
+			}
+			.acitvityFixed a {
+				width:161px; height:172px;display:block;
+			}
+			
+			.acitvityFixed-close {
+				width:18px; height:18px;
+				background: red;
+				position:absolute; 
+				top:10px; right:15px;
+				color:#fff; cursor:pointer;
+				line-height:18px; text-align:center; 
+				font-size:12px; overflow:hidden;
+			}
+
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="animated acitvityFixed">
+			<p class="acitvityFixed-close" style=""></p>
+			<a href="javascript:void(0)" target="_blank">
+				<img src="http://wx-gmzx.oss-cn-shenzhen.aliyuncs.com/images/gmzx/index/xuanfu/gifts.png">
+			</a>
+		</div>
+		
+		<script type="text/javascript">
+			//某元素隐藏
+			var closeBtn=$('.acitvityFixed-close');
+			var gifts=$('.acitvityFixed')
+			closeBtn.on('click',function(){
+				gifts.hide()
+				setTimeout(gmGift,1000);
+			})
+			
+			function gmGift(){
+				if ( $('.acitvityFixed').is(':hidden') ){		
+					$('.acitvityFixed').show();
+				}
+			}
+
+		</script>
+	</body>
+
+</html>

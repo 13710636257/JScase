@@ -1,0 +1,213 @@
+<style>
+	#HM2box {
+		width: 290px;
+		height: 292px;
+		display: none;
+		background: #FFF;
+		color: #444;
+		position: fixed;
+		left: 50%;
+		top: 45%;
+		z-index: 9999200;
+		margin-left: -145px;
+		margin-top: -130px;
+		-moz-border-radius: 15px;
+		-webkit-border-radius: 15px;
+		border-radius: 15px;
+		-moz-box-shadow: 0 0 20px rgba(10, 2, 4, 0.75);
+		-webkit-box-shadow: 0 0 20px rgba(10, 2, 4, 0.75);
+		box-shadow: 0 0 20px rgba(10, 2, 4, 0.75);
+	}
+	
+	.HM2m {
+		height: 292px;
+		position: relative;
+	}
+	
+	.HM2m img {
+		width: 100%;
+		-moz-border-radius: 15px 15px 0 0;
+		-webkit-border-radius: 15px 15px 0 0;
+		border-radius: 15px 15px 0 0;
+	}
+	
+	#HM2cl {
+		position: absolute;
+		right: -12px;
+		top: -20px;
+		width: 45px;
+		height: 45px;
+		-moz-background-size: 100%;
+		-webkit-background-size: 100%;
+		background-size: 100%;
+		cursor: pointer;
+		border-radius: 100%;
+		color: #FFF;
+		overflow: hidden;
+		margin: 0
+	}
+	
+	#HM2cl span {
+		width: 42px;
+		height: 42px;
+		background: #666;
+		color: #FFF;
+		line-height: 42px;
+		text-align: center;
+		vertical-align: middle;
+		margin: 0 auto;
+		display: block;
+		border-radius: 100%;
+		font-size: 34px;
+		border: 1px solid #CCC;
+	}
+	
+	.HM2lists {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		-moz-border-radius: 0 0 15px 15px;
+		-webkit-border-radius: 0 0 15px 15px;
+		border-radius: 0 0 15px 15px;
+		z-index: 999
+	}
+	
+	.HM2lists a {
+		display: block;
+		width: 50%;
+		height: 100%;
+		position: relative;
+		float: left;
+	}
+	
+	.HM2list1 {
+		background-color: #26c540;
+		-moz-border-radius: 0 0 15px 0;
+		-webkit-border-radius: 0 0 15px 0;
+		border-radius: 0 0 15px 0;
+	}
+	
+	.HM2list2 {
+		background-color: #ff6005;
+		-moz-border-radius: 0 0 0 15px;
+		-webkit-border-radius: 0 0 0 15px;
+		border-radius: 0 0 0 15px;
+	}
+	
+	.HM2lists a i,
+	.HM2lists a em {
+		display: block;
+		position: absolute;
+		left: 50%;
+		color: #fff;
+		text-decoration: none;
+		font-style: normal
+	}
+	
+	.HM2CallIcon {
+		top: 50%;
+		margin-left: -55px;
+		margin-top: -13px;
+		width: 27px;
+		height: 27px;
+		background: url(/b/style/img/Link3.png) no-repeat;
+		-moz-background-size: 100%;
+		-webkit-background-size: 100%;
+		background-size: 100%;
+	}
+	
+	.HM2lists em {
+		height: 100%;
+		top: 0;
+		margin-left: -16px;
+		font-size: 16px;
+	}
+	
+	.HM2list1 em {
+		margin-left: -19px;
+	}
+	
+	.HM2LinkIcon {
+		top: 50%;
+		margin-left: -55px;
+		width: 27px;
+		height: 24px;
+		margin-top: -12px;
+		background: url(/b/style/img/Link2.png) no-repeat;
+		-moz-background-size: 100%;
+		-webkit-background-size: 100%;
+		background-size: 100%;
+	}
+	
+	.HM2LinkCoun {
+		top: 7px;
+		width: 14px;
+		height: 14px;
+		margin-left: -34px;
+		line-height: 13px;
+		text-align: center;
+		font-size: 9px;
+		background-color: #e60012;
+		-moz-border-radius: 14px;
+		-webkit-border-radius: 14px;
+		border-radius: 14px;
+		-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+		-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+		z-index: 3;
+		font-style: normal;
+	}
+	
+	.HM2free {
+		top: 10px;
+		width: 24px;
+		height: 14px;
+		font-size: 10px;
+		margin-left: 41px;
+		line-height: 13px;
+		color: #ff6005 !important;
+	}
+</style>
+<div id="HM2box">
+	<div class="HM2m">
+		<a href="javascript:void(0);" onClick="openZoosUrl();return false;"><img id="HMimgID" src="/b/style/hd/swt/bns.jpg"></a>
+	</div>
+	<div id="HM2cl" onClick="HM2cl();"><span>&times;</span></div>
+	<div class="HM2lists">
+		<a href="javascript:void(0);" onClick="openZoosUrl();return false;" class="HM2list2"><i class="HM2LinkCoun azx" id="HM2LinkCoun">9</i><i class="HM2LinkIcon"></i><em>在线咨询</em></a>
+		<a href="javascript:void(0);" onClick="openZoosUrl();return false;" class="HM2list1"><i class="HM2CallIcon"></i><em>在线预约</em><i class="HM2free">免费</i></a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var HMimgID = 's1.jpg';
+	var HMimgID2 = 's2.jpg';
+	setTimeout("swt2Show()", 6000);
+
+	function swt2Show() {
+		document.getElementById('HM2box').style.display = 'block';
+	}
+
+	function HM2cl() {
+		document.getElementById('HM2box').style.display = 'none';
+		setTimeout("swt2Show()", 9000);
+		HMtimg();
+	}
+	var img_i = 0;
+
+	function HMtimg() {
+		if(img_i == 0) {
+			imgID = HMimgID2;
+			img_i++;
+		} else {
+			imgID = HMimgID;
+			img_i = 0;
+		}
+		if(document.getElementById('HMimgID')) {
+			document.getElementById('HMimgID').src = '/b/style/hd/swt/' + imgID;
+		}
+	}
+</script>
