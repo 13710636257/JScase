@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串方法总结</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			查看链接:https://www.jb51.net/article/65358.htm
+//			1、字符串转化
+			var num = 19;
+//			var myStr = num.toString();
+			var myStr = String(num); // "19"
+			console.log(myStr) //'19'
+		
+//			2、字符串分割
+			var Str = "I,Love,You,Do,you,love,me";
+			var substrArray = Str .split(",");
+			console.log(substrArray)//// ["I", "Love", "You", "Do", "you", "love", "me"];
+			var arrayLimited = Str .split(",", 3);  //split()第二个参数,表示返回的字符串数组的最大长度
+			console.log(arrayLimited)//["I", "Love", "You"]
+			
+//			3,查询子字符串 从下
+//			indexOf(),它从字符串的开头开始查找,找到返回对应坐标,找不到返回-1
+			var index=Str.indexOf('You')//7
+			console.log(index)
+			
+//			第二个函数：lastIndexOf()，找到相同字符的最后一个，找到返回对应坐标，找不到返回-1。如下：
+			var lastIndex=Str.lastIndexOf('you')//14
+			console.log(lastIndex)
+//			indexOf(),lastIndexOf()两个函数同样接收第二个可选的参数，表示开始查找的位置。
+			
+			console.log(Str.replace("you",'he'))
+		</script>
+	</body>
+</html>
